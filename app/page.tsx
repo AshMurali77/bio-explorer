@@ -4,7 +4,7 @@ import TimelineRow from "./components/timeline/TimelineRow";
 export default function Home() {
   return (
     <main className="min-h-screen py-8">
-      <div className=" mx-8 items-center justify-center font-sans">
+      <div className=" mx-12 items-center justify-center font-sans">
         <h1 className="text-3xl font-bold mx-auto my-3">
           Bioinformatics Timeline
         </h1>
