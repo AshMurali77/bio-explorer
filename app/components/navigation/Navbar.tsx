@@ -1,7 +1,9 @@
 "use client";
 import { BeakerIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import WorkflowDropdown from "./WorkflowDropdown";
 export default function Navbar() {
+  
   return (
     <nav
       className="
@@ -25,9 +27,7 @@ export default function Navbar() {
         <Link href="/about" className="hover:text-sky-400 transition-colors">
           About
         </Link>
-        <Link href="/details" className="hover:text-sky-400 transition-colors">
-          Workflows
-        </Link>
+        <WorkflowDropdown />
         <Link href="/details" className="hover:text-sky-400 transition-colors">
           Tech
         </Link>
