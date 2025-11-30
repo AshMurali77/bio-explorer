@@ -1,17 +1,17 @@
 import Link from "next/link";
 export default function TimelineCard({
-  id,
+  page_slug,
   title,
   description,
   tags,
 }: {
-  id: string;
+  page_slug: string;
   title: string;
   description: string;
   tags: string[];
 }) {
   return (
-    <Link href={`./details/${id}`}>
+    <Link href={`./steps/${page_slug}`}>
       <div className="bg-slate-400 rounded overflow-hidden shadow-lg cursor-pointer transition-transform duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:bg-slate-400/80 hover:ring-2 hover:ring-sky-400/60">
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>

@@ -1,5 +1,5 @@
 
-const quantificationStep = {
+/* const quantificationStep = {
   id: "rna-quantification",
   title: "Gene / Transcript Quantification",
   commonTools: ["featureCounts", "HTSeq-count", "Salmon", "Kallisto"],
@@ -29,26 +29,29 @@ const quantificationStep = {
   -o salmon_quant/`,
     },
   ],
-};
+}; */
 
-export default function QuantificationStepPage() {
-  const step = quantificationStep;
+import { getWorkflowStepDetails } from "@/app/lib/data";
 
+export default async function Page({params}:{params: Promise<{slug: string}>}) {
+  const {slug} = await params;
+  const [workflowStep] = await getWorkflowStepDetails(slug); 
+  
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="max-w-4xl mx-auto px-6 py-16">
         {/* TITLE + TOOLS */}
         <header className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-            {step.title}
+            {workflowStep.title}
           </h1>
 
           <p className="text-sm text-slate-400 mb-4">
-            RNA-seq Workflow · Step: Quantification
+            {workflowStep.workflow_title} · Step {workflowStep.step_order}
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {step.commonTools.map((tool) => (
+            {workflowStep.common_tools?.map((tool) => (
               <span
                 key={tool}
                 className="inline-flex items-center rounded-full border border-sky-500/40 bg-slate-900/60 px-3 py-1 text-xs text-sky-100"
@@ -63,7 +66,7 @@ export default function QuantificationStepPage() {
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-2">Why this step is important</h2>
           <p className="text-sm text-slate-300 leading-relaxed">
-            {step.whyImportant}
+            {workflowStep.why_important}
           </p>
         </section>
 
@@ -71,7 +74,7 @@ export default function QuantificationStepPage() {
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-2">Example</h2>
           <p className="text-sm text-slate-300 leading-relaxed">
-            {step.example}
+            {workflowStep.example}
           </p>
         </section>
 
@@ -80,7 +83,7 @@ export default function QuantificationStepPage() {
           <h2 className="text-lg font-semibold mb-3">Code snippets</h2>
 
           <div className="space-y-6">
-            {step.codeSnippets.map((snippet) => (
+            {workflowStep.code_snippets?.map((snippet) => (
               <div
                 key={snippet.label}
                 className="rounded-lg border border-slate-800 bg-slate-950/70 p-4"
@@ -105,8 +108,8 @@ export default function QuantificationStepPage() {
         {/* BACK LINK / CTA */}
         <section className="pt-4 border-t border-slate-800 mt-8 text-xs text-slate-500">
           <p>
-            This step is part of the RNA-seq Differential Expression Workflow.{" "}
-            {/* You can replace with a Link back to the workflow timeline */}
+            This step is part of the {workflowStep.workflow_title}
+            {/* Maybe replace with a Link back to the workflow timeline */}
           </p>
         </section>
       </div>

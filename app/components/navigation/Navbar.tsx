@@ -29,7 +29,6 @@ export default async function Navbar() {
       <div className="flex justify-center gap-3 text-md absolute left-1/2 -translate-x-1/2">
 
         <WorkflowDropdown workflows={workflows}/>
-        <StepsDropdown />
       </div>
       <a href="https://www.linkedin.com/in/ashmurali/" target="_blank" className="bg-sky-600 text-white font-sm px-4 py-2 rounded-md max-w-50 transition-all duration-200 hover:bg-sky-400  hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-sky-400/50 flex">
         <p>Let's Connect</p>

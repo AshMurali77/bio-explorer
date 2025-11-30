@@ -4,7 +4,7 @@ export default function WorkflowDropdown({workflows}: {workflows: WORKFLOW[]}) {
   
   return (
     <div className="relative group">
-      <button className="hover:text-sky-400 transition-colors flex items-center gap-1">
+      <button className="hover:text-sky-400 transition-colors flex items-center gap-1 text-lg">
         Workflows
       </button>
 

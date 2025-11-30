@@ -12,7 +12,7 @@ export default function TimelineRow({
       {/*LEFT COLUMN*/}
       {side === "left" ? (
         <TimelineCard
-          id={item.id}
+          page_slug={item.page_slug}
           title={item.title}
           description={item.description}
           tags={item.technologies}
@@ -27,7 +27,7 @@ export default function TimelineRow({
       {/*RIGHT COLUMN*/}
       {side === "right" ? (
         <TimelineCard
-          id={item.id}
+          page_slug={item.page_slug}
           title={item.title}
           description={item.description}
           tags={item.technologies}
