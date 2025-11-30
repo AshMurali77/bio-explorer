@@ -5,3 +5,10 @@ export type WORKFLOW = {
     title: string,
     description?: string,
 }
+
+export type TIMELINE_CARD = {
+    id: string;
+    title: string;
+    content: string;
+    tags: string[];
+}

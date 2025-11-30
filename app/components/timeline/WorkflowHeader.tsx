@@ -1,6 +1,6 @@
 type WorkflowHeaderProps = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 };
 
 export default function WorkflowHeader({ title, description }: WorkflowHeaderProps) {
