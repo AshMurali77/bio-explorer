@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { WORKFLOWS } from "../timeline/TimelineItem";
-
-export default function WorkflowDropdown() {
+import { WORKFLOW} from "@/app/lib/definitions";
+export default function WorkflowDropdown({workflows}: {workflows: WORKFLOW[]}) {
+  
   return (
     <div className="relative group">
       <button className="hover:text-sky-400 transition-colors flex items-center gap-1">
@@ -23,10 +23,10 @@ export default function WorkflowDropdown() {
     "
       >
         <div className="py-2 flex flex-col text-sm">
-          {WORKFLOWS.map((wf) => (
+          {workflows.map((wf) => (
             <Link
               key={wf.id}
-              href={wf.href}
+              href={`/workflows/${wf.slug}`}
               className="
             px-4 py-2 
             hover:bg-slate-800/70 
@@ -34,7 +34,7 @@ export default function WorkflowDropdown() {
             transition-colors
           "
             >
-              {wf.name}
+              {wf.title}
             </Link>
           ))}
         </div>
