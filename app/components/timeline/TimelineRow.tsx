@@ -1,10 +1,10 @@
-import { TimelineItem } from "./TimelineItem";
+import { TIMELINE_CARD } from "@/app/lib/definitions";
 import TimelineCard from "./TimelineCard";
 export default function TimelineRow({
   item,
   side,
 }: {
-  item: TimelineItem;
+  item: TIMELINE_CARD;
   side: "left" | "right";
 }) {
   return (
@@ -14,8 +14,8 @@ export default function TimelineRow({
         <TimelineCard
           id={item.id}
           title={item.title}
-          content={item.content}
-          tags={item.tags}
+          description={item.description}
+          tags={item.technologies}
         />
       ) : (
         <div />
@@ -29,8 +29,8 @@ export default function TimelineRow({
         <TimelineCard
           id={item.id}
           title={item.title}
-          content={item.content}
-          tags={item.tags}
+          description={item.description}
+          tags={item.technologies}
         />
       ) : (
         <div />

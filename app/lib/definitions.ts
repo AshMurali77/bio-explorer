@@ -8,7 +8,8 @@ export type WORKFLOW = {
 
 export type TIMELINE_CARD = {
     id: string;
+    slug: string; 
     title: string;
-    content: string;
-    tags: string[];
+    description: string;
+    technologies: string[];
 }
