@@ -13,6 +13,10 @@ export const WORKFLOWS = [
   },
 ];
 
+export const STEPS = [
+  { id: "qc", name: "Quantification", href: "/steps/quantification" },
+];
+
 export const WGS_VARIANT_TIMELINE_ITEMS: TimelineItem[] = [
   {
     id: "qc",
