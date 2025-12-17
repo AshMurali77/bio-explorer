@@ -1,36 +1,5 @@
 
-/* const quantificationStep = {
-  id: "rna-quantification",
-  title: "Gene / Transcript Quantification",
-  commonTools: ["featureCounts", "HTSeq-count", "Salmon", "Kallisto"],
-  whyImportant:
-    "Quantification is the point where raw aligned reads (or pseudo-aligned reads) become something biologically interpretable: expression values per gene or transcript. Every downstream analysis — differential expression, clustering, pathway enrichment — depends on the quality of this count matrix. Good quantification ensures that reads are assigned correctly to features, handles multimapping and strandedness appropriately, and produces counts that accurately reflect the underlying biology rather than technical artifacts.",
-  example:
-    "Imagine you’ve run STAR to align your trimmed RNA-seq reads and now have a coordinate-sorted BAM file (`sample_Aligned.sortedByCoord.out.bam`) plus an annotation file (`annotation.gtf`). You can run featureCounts to generate a gene-level count table, or use Salmon directly on trimmed FASTQ files to get transcript-level abundances.",
-  codeSnippets: [
-    {
-      label: "featureCounts for gene-level counts",
-      language: "bash",
-      code: `featureCounts \\
-  -T 8 \\
-  -a annotation.gtf \\
-  -o counts.txt \\
-  sample_Aligned.sortedByCoord.out.bam`,
-    },
-    {
-      label: "Salmon quantification from trimmed reads",
-      language: "bash",
-      code: `salmon quant \\
-  -i transcripts_index \\
-  -l A \\
-  -1 sample_R1.trimmed.fastq.gz \\
-  -2 sample_R2.trimmed.fastq.gz \\
-  -p 8 \\
-  -o salmon_quant/`,
-    },
-  ],
-}; */
-
+import Back from "@/app/components/button";
 import { getWorkflowStepDetails } from "@/app/lib/data";
 
 export default async function Page({params}:{params: Promise<{slug: string}>}) {
@@ -40,6 +9,7 @@ export default async function Page({params}:{params: Promise<{slug: string}>}) {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="max-w-4xl mx-auto px-6 py-16">
+        <Back />
         {/* TITLE + TOOLS */}
         <header className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
